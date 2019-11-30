@@ -14,6 +14,7 @@
 		CC984D342390366D00494980 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC984D332390366D00494980 /* Assets.xcassets */; };
 		CC984D372390366D00494980 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC984D352390366D00494980 /* LaunchScreen.storyboard */; };
 		CC984D3F239036CE00494980 /* Cupcake.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC984D3E239036CE00494980 /* Cupcake.swift */; };
+		CC984D412392E4C100494980 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC984D402392E4C100494980 /* Order.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		CC984D362390366D00494980 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC984D382390366D00494980 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC984D3E239036CE00494980 /* Cupcake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cupcake.swift; sourceTree = "<group>"; };
+		CC984D402392E4C100494980 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				CC984D2A2390366B00494980 /* AppDelegate.swift */,
 				CC984D2C2390366B00494980 /* SceneDelegate.swift */,
 				CC984D2E2390366B00494980 /* ViewController.swift */,
+				CC984D402392E4C100494980 /* Order.swift */,
 				CC984D3E239036CE00494980 /* Cupcake.swift */,
 				CC984D302390366B00494980 /* Main.storyboard */,
 				CC984D332390366D00494980 /* Assets.xcassets */,
@@ -143,6 +146,7 @@
 			files = (
 				CC984D3F239036CE00494980 /* Cupcake.swift in Sources */,
 				CC984D2F2390366B00494980 /* ViewController.swift in Sources */,
+				CC984D412392E4C100494980 /* Order.swift in Sources */,
 				CC984D2B2390366B00494980 /* AppDelegate.swift in Sources */,
 				CC984D2D2390366B00494980 /* SceneDelegate.swift in Sources */,
 			);

@@ -52,6 +52,45 @@ class ViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cake = cupcakes[indexPath.row]
+        
+        let ac = UIAlertController(title: "Order a \(cake.name)?", message: "Please enter your name", preferredStyle: .alert)
+        ac.addTextField()
+        
+        ac.addAction(UIAlertAction(title: "Order it!", style: .default, handler: { (action) in
+            guard let name = ac.textFields?[0].text else { return }
+            self.order(cake, name: name)
+        }))
+        
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(ac, animated: true, completion: nil)
+    }
+    
+    func order(_ cake: Cupcake, name: String) {
+        let order = Order(cakeName: cake.name, buyerName: name)
+        let url = URL(string: "http://localhost:8080/order")!
+        
+        let encoder = JSONEncoder()
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = try? encoder.encode(order)
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let data = data {
+                let decoder = JSONDecoder()
+                
+                if let item = try? decoder.decode(Order.self, from: data) {
+                    print(item.buyerName)
+                } else {
+                    print("Bad JSON received back.")
+                }
+            }
+        }.resume()
+    }
 
 
 }
